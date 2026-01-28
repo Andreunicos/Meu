@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { UNREAL_GAME_URL } from '../constants';
-import { Ghost, ArrowRight, Camera, Skull, Ghost as GhostIcon, Eye, Download } from 'lucide-react';
+import { Ghost, Camera, Skull, Ghost as GhostIcon, Eye, Download } from 'lucide-react';
 
 const UnrealSection: React.FC = () => {
   const images = [
@@ -14,7 +14,7 @@ const UnrealSection: React.FC = () => {
   return (
     <section id="unreal" className="relative py-32 px-6 bg-[#080808] overflow-hidden">
       {/* Smooth Transition Top Gradient from Roblox */}
-      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#030303] to-transparent z-20"></div>
+      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#030303] to-transparent z-20 pointer-events-none"></div>
       
       {/* Atmospheric Background Effects */}
       <div className="absolute top-1/4 right-0 w-[60vw] h-[60vw] bg-purple-900/10 rounded-full blur-[140px] pointer-events-none opacity-40"></div>

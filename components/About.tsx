@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ABOUT_TEXT } from '../constants';
 import { Box, Layers, Zap } from 'lucide-react';
@@ -5,10 +6,13 @@ import { Box, Layers, Zap } from 'lucide-react';
 const About: React.FC = () => {
   return (
     <section id="sobre" className="relative py-32 px-6 bg-[#080808]">
+        {/* Smooth Transition from Hero */}
+        <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#050505] to-transparent z-10 pointer-events-none"></div>
+        
         {/* Background Decorative */}
         <div className="absolute right-0 top-1/3 w-1/3 h-1/3 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto relative z-20">
         <div className="grid md:grid-cols-5 gap-12 items-center">
             
             {/* Visual Side */}

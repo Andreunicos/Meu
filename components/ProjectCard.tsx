@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Project } from '../types';
-import { Plus, Maximize } from 'lucide-react';
+import { Maximize } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;

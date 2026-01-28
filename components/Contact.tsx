@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { EMAIL, PHONE, ARTSTATION_URL } from '../constants';
 import { Mail, Phone, ExternalLink, Copy } from 'lucide-react';
@@ -5,12 +6,14 @@ import { Mail, Phone, ExternalLink, Copy } from 'lucide-react';
 const Contact: React.FC = () => {
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-    // Could add a toast notification here
   };
 
   return (
     <section id="contato" className="py-32 px-6 bg-[#050505] relative overflow-hidden">
-      <div className="max-w-4xl mx-auto relative z-10">
+      {/* Smooth Transition from Unreal */}
+      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#080808] to-transparent z-10 pointer-events-none"></div>
+
+      <div className="max-w-4xl mx-auto relative z-20">
         <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Vamos criar algo juntos?</h2>
             <p className="text-textMuted text-lg">Estou disponível para freelance e novas oportunidades.</p>

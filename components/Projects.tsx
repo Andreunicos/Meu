@@ -53,12 +53,13 @@ const Projects: React.FC = () => {
 
   return (
     <section id="galeria" className="relative py-24 px-4 sm:px-8 bg-[#050505] min-h-screen">
+      {/* Smooth Transition from About */}
+      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#080808] to-transparent z-10 pointer-events-none"></div>
       
       {/* Header Section */}
-      <div className="max-w-7xl mx-auto mb-16 flex flex-col md:flex-row items-end justify-between gap-8 border-b border-white/10 pb-12 relative z-10">
+      <div className="max-w-7xl mx-auto mb-16 flex flex-col md:flex-row items-end justify-between gap-8 border-b border-white/10 pb-12 relative z-20">
         <div className="animate-fade-up">
            <div className="flex items-center gap-2 mb-3">
-             <Sparkles className="w-5 h-5 text-primary animate-pulse" />
              <span className="text-primary font-mono text-sm tracking-[0.3em] uppercase block">Portfólio de Arte 3D</span>
            </div>
            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">Galeria 3D</h2>
@@ -84,7 +85,7 @@ const Projects: React.FC = () => {
       </div>
 
       {/* Tabs / Filters */}
-      <div className="max-w-7xl mx-auto mb-16 overflow-x-auto no-scrollbar animate-fade-up">
+      <div className="max-w-7xl mx-auto mb-16 overflow-x-auto no-scrollbar animate-fade-up relative z-20">
         <div className="flex gap-4 min-w-max pb-4">
           {categories.map((cat) => (
             <button
@@ -104,7 +105,7 @@ const Projects: React.FC = () => {
       </div>
 
       {/* Projects Grid / Loading State */}
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-20">
         {isLoading ? (
             <div className="flex flex-col items-center justify-center py-32 gap-6">
                 <Loader2 className="w-12 h-12 text-primary animate-spin" />
