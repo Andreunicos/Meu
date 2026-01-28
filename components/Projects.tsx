@@ -4,7 +4,7 @@ import { ARTSTATION_URL } from '../constants';
 import { Project } from '../types';
 import ProjectCard from './ProjectCard';
 import { fetchArtStationProjects } from '../services/artstationService';
-import { ArrowUpRight, X, LayoutGrid, Users, Box, Sparkles, Package, Loader2, RefreshCw } from 'lucide-react';
+import { ArrowUpRight, X, LayoutGrid, Users, Box, Package, Loader2, RefreshCw } from 'lucide-react';
 
 type CategoryFilter = 'Tudo' | 'Personagens' | 'Props' | 'Assets';
 
