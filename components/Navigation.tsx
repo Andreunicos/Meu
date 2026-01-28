@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -30,8 +31,10 @@ const Navigation: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', href: '#' },
-    { name: 'Galeria', href: '#galeria' },
     { name: 'Sobre', href: '#sobre' },
+    { name: 'Galeria', href: '#galeria' },
+    { name: 'Roblox', href: '#roblox' },
+    { name: 'Unreal', href: '#unreal' },
     { name: 'Contato', href: '#contato' },
   ];
 

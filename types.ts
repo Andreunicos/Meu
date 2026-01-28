@@ -1,8 +1,10 @@
+
 export interface Project {
   id: number;
   title: string;
   description: string;
   image: string;
+  category: 'Personagens' | 'Props' | 'Assets';
 }
 
 export interface ChatMessage {

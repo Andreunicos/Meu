@@ -3,14 +3,18 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  // Carrega as variáveis de ambiente baseadas no modo atual (development/production)
   const env = loadEnv(mode, '.', '');
   
   return {
+    // IMPORTANTE: base: './' garante que o site funcione em subpastas do GitHub Pages
+    base: './',
     plugins: [react()],
     define: {
-      // Isso permite que o código use process.env.API_KEY no navegador
-      'process.env.API_KEY': JSON.stringify(env.API_KEY)
+      'process.env.API_KEY': JSON.stringify(env.API_KEY || '')
+    },
+    build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
     }
   }
 })

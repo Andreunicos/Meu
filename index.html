@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
@@ -12,7 +13,7 @@
   <meta property="og:description" content="Game Designer e Artista 3D. Transformando conceitos em mundos vivos com Unreal Engine e Roblox." />
   <meta property="og:image" content="https://cdnb.artstation.com/p/assets/images/images/088/365/509/large/andre-render-principal.jpg?1748101051" />
   
-  <!-- Font: Space Grotesk for a tech/artistic feel -->
+  <!-- Font: Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -40,7 +41,8 @@
             'float': 'float 6s ease-in-out infinite',
             'fade-up': 'fadeUp 0.8s ease-out forwards',
             'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'spin-slow': 'spin 12s linear infinite',
+            'reveal': 'reveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards',
+            'zoom-fade': 'zoomFade 0.5s ease-out forwards',
           },
           keyframes: {
             float: {
@@ -50,6 +52,14 @@
             fadeUp: {
               '0%': { opacity: '0', transform: 'translateY(20px)' },
               '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            reveal: {
+              '0%': { opacity: '0', transform: 'translateY(30px) scale(0.95)' },
+              '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+            },
+            zoomFade: {
+              '0%': { opacity: '0', transform: 'scale(0.8)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
             }
           }
         }
@@ -63,34 +73,26 @@
       overflow-x: hidden;
     }
     
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #050505;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #333;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #00ffd5;
-    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #050505; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #00ffd5; }
 
-    /* Selection Color */
-    ::selection {
-      background: #00ffd5;
-      color: #000;
-    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* Glass Effect Utility */
     .glass-panel {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
+    
+    .stagger-1 { animation-delay: 100ms; }
+    .stagger-2 { animation-delay: 200ms; }
+    .stagger-3 { animation-delay: 300ms; }
+    .stagger-4 { animation-delay: 400ms; }
+    .stagger-5 { animation-delay: 500ms; }
+    .stagger-6 { animation-delay: 600ms; }
   </style>
 <script type="importmap">
 {
@@ -100,8 +102,8 @@
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
     "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
     "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "vite": "https://esm.sh/vite@^7.3.1"
   }
 }
 </script>

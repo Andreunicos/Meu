@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { OWNER_NAME, ROLES } from '../constants';
 import { ChevronDown } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   const handleScrollToGallery = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const element = document.getElementById('galeria');
@@ -26,7 +29,7 @@ const Hero: React.FC = () => {
         {/* Animated Badge */}
         <div className="mb-8 opacity-0 animate-fade-up" style={{ animationDelay: '0.2s' }}>
           <span className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-bold tracking-[0.2em] uppercase backdrop-blur-sm">
-            Portfólio 2025
+            Portfólio {currentYear}
           </span>
         </div>
 
